@@ -5,20 +5,22 @@ import static org.junit.jupiter.api.Assertions.*;
 //ANY EDITS WILL RESULT IN POINT REDUCTION
 
 class TimerTest {
-
-
     Timer t;
     
     @Test
      void TestStart() {
          t = new Timer();
-         t.start();
-         Exception e = assertThrows(Exception.class, () -> t.start());
+        try {
+            t.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Exception e = assertThrows(Exception.class, () -> t.start());
          assertEquals("Timer Already Started", e.getMessage());
      }
  
      @Test
-     void TestStop() {
+     void TestStop() throws Exception {
          long duration;
          t = new Timer();
          t.start();
@@ -28,7 +30,7 @@ class TimerTest {
      }
  
      @Test
-     void TestReset() {
+     void TestReset() throws Exception {
          t = new Timer();
          t.start();
          t.reset();
