@@ -13,7 +13,8 @@ class TimerTest {
      void TestStart() {
          t = new Timer();
          t.start();
-         t.start() should throw exception
+         Exception e = assertThrows(Exception.class, () -> t.start());
+         assertEquals("Timer Already Started", e.getMessage());
      }
  
      @Test
@@ -23,7 +24,7 @@ class TimerTest {
          t.start();
          Thread.sleep(50);
          duration = t.stop();
-         assertTrue(duration > 50);
+         assertTrue(duration >= 50);
      }
  
      @Test
@@ -31,7 +32,8 @@ class TimerTest {
          t = new Timer();
          t.start();
          t.reset();
-         t.start(); //no exception
-         // test stop again
+         t.start();
+         Thread.sleep(50);
+         assertTrue(t.stop() >= 50);
      }
 }
