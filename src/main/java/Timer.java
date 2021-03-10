@@ -1,18 +1,16 @@
 public class Timer {
 
     //DO NOT EDIT EXCEPT WITHIN METHODS
-    long begin;
-    long end;
-
-    void start(){
+    
+    public void start(){
         //code here
     }
 
-    long stop(){
+    public long stop(){
         //code here
     }
 
-    void reset(){
+    public void reset(){
         //code here
     }
 }
