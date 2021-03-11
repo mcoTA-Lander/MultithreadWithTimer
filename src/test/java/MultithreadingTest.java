@@ -24,6 +24,8 @@ class MultithreadingTest {
     void TestListSum(){
         setUp();
         m = new Multithreading();
-        assertEquals(expectedTotal, m.listSum(nums, 1000));
+        for(int i =1; i<= 512; i*=2){
+            assertEquals(expectedTotal, m.listSum(nums, i));
+        }
     }
 }
