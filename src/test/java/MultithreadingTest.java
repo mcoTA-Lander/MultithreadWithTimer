@@ -25,7 +25,7 @@ class MultithreadingTest {
         setUp();
         m = new Multithreading();
         for(int i =1; i<= 512; i*=2){
-            assertEquals(expectedTotal, m.listSum(nums, i));
+            assertEquals(String.format("Test Failed for %d threads", i),expectedTotal, m.listSum(nums, i));
         }
     }
 }
