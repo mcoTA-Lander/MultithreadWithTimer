@@ -9,17 +9,13 @@ class TimerTest {
     
     @Test
      void TestStart() {
-        try {
-            t.start();
-        } catch (Exception e) {
- 
-        }
-        Exception e = assertThrows(Exception.class, () -> t.start());
+         t.start();
+         Exception e = assertThrows(Exception.class, () -> t.start());
          assertEquals("Timer Already Started", e.getMessage());
      }
  
      @Test
-     void TestStop() throws Exception {
+     void TestStop() throws InterruptedException {
          long duration;
          t.start();
          Thread.sleep(50);
@@ -28,7 +24,7 @@ class TimerTest {
      }
  
      @Test
-     void TestReset() throws Exception {
+     void TestReset() throws InterruptedException {
          t.start();
          t.reset();
          t.start();
