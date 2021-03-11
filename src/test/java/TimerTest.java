@@ -12,7 +12,7 @@ class TimerTest {
         try {
             t.start();
         } catch (Exception e) {
-            e.printStackTrace();
+ 
         }
         Exception e = assertThrows(Exception.class, () -> t.start());
          assertEquals("Timer Already Started", e.getMessage());
